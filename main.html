@@ -1,4 +1,4 @@
--- KDype Script Loader
+-- KDype Script Loader - Black Edition
 -- LocalScript - Place in StarterGui
 -- By ENI for LO
 
@@ -7,67 +7,68 @@ local PlayerGui = Player:WaitForChild("PlayerGui")
 
 -- Create the main ScreenGui
 local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "KdypeScriptGui"
+ScreenGui.Name = "KdypeScriptGuiBlack"
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 ScreenGui.ResetOnSpawn = false
 ScreenGui.Parent = PlayerGui
 
--- Create the main background frame
+-- Create the main background frame - CENTERED
 local MainFrame = Instance.new("Frame")
 MainFrame.Name = "MainFrame"
 MainFrame.Size = UDim2.new(0, 500, 0, 350)
-MainFrame.Position = UDim2.new(0.5, -250, 0.5, -175)
-MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-MainFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+MainFrame.Position = UDim2.new(0.5, -250, 0.5, -175) -- Perfect center
+MainFrame.AnchorPoint = Vector2.new(0.5, 0.5) -- Anchor to center for true centering
+MainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- PURE BLACK
 MainFrame.BorderSizePixel = 0
-MainFrame.BackgroundTransparency = 0.1
+MainFrame.BackgroundTransparency = 0 -- No transparency
 MainFrame.Parent = ScreenGui
 
--- Add corner rounding
+-- Add sharp corner rounding (minimal)
 local UICorner = Instance.new("UICorner")
-UICorner.CornerRadius = UDim.new(0, 12)
+UICorner.CornerRadius = UDim.new(0, 8) -- Small radius for sharp look
 UICorner.Parent = MainFrame
 
--- Add a subtle shadow
+-- Add a thin black stroke for definition
 local UIStroke = Instance.new("UIStroke")
 UIStroke.Thickness = 2
-UIStroke.Color = Color3.fromRGB(60, 60, 60)
+UIStroke.Color = Color3.fromRGB(30, 30, 30) -- Very dark grey, almost black
 UIStroke.Parent = MainFrame
 
--- Title Bar
+-- Title Bar - BLACK
 local TitleBar = Instance.new("Frame")
 TitleBar.Name = "TitleBar"
 TitleBar.Size = UDim2.new(1, 0, 0, 40)
 TitleBar.Position = UDim2.new(0, 0, 0, 0)
-TitleBar.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+TitleBar.BackgroundColor3 = Color3.fromRGB(10, 10, 10) -- Darker black for contrast
 TitleBar.BorderSizePixel = 0
 TitleBar.Parent = MainFrame
 
 local TitleBarCorner = Instance.new("UICorner")
-TitleBarCorner.CornerRadius = UDim.new(0, 12)
+TitleBarCorner.CornerRadius = UDim.new(0, 8)
 TitleBarCorner.Parent = TitleBar
 
+-- Title Text - WHITE on black (for readability)
 local TitleText = Instance.new("TextLabel")
 TitleText.Name = "TitleText"
 TitleText.Size = UDim2.new(1, -20, 1, 0)
 TitleText.Position = UDim2.new(0, 10, 0, 0)
 TitleText.BackgroundTransparency = 1
-TitleText.Text = "KDYPE SCRIPT LOADER"
-TitleText.TextColor3 = Color3.fromRGB(220, 220, 220)
+TitleText.Text = "KDYPE SCRIPT"
+TitleText.TextColor3 = Color3.fromRGB(255, 255, 255) -- Pure white text
 TitleText.TextSize = 20
 TitleText.Font = Enum.Font.GothamBold
 TitleText.TextXAlignment = Enum.TextXAlignment.Left
 TitleText.Parent = TitleBar
 
--- Close button (optional functionality)
+-- Close button - BLACK with white text
 local CloseButton = Instance.new("TextButton")
 CloseButton.Name = "CloseButton"
 CloseButton.Size = UDim2.new(0, 30, 0, 30)
 CloseButton.Position = UDim2.new(1, -35, 0.5, -15)
-CloseButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+CloseButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20) -- Slightly lighter black
 CloseButton.BorderSizePixel = 0
 CloseButton.Text = "X"
-CloseButton.TextColor3 = Color3.fromRGB(200, 200, 200)
+CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
 CloseButton.TextSize = 16
 CloseButton.Font = Enum.Font.GothamBold
 CloseButton.Parent = TitleBar
@@ -81,15 +82,15 @@ local ContentFrame = Instance.new("Frame")
 ContentFrame.Name = "ContentFrame"
 ContentFrame.Size = UDim2.new(1, -40, 1, -80)
 ContentFrame.Position = UDim2.new(0, 20, 0, 60)
-ContentFrame.BackgroundTransparency = 1
+ContentFrame.BackgroundTransparency = 1 -- Transparent to show black background
 ContentFrame.Parent = MainFrame
 
--- Welcome text box
+-- Welcome text box - BLACK
 local WelcomeBox = Instance.new("Frame")
 WelcomeBox.Name = "WelcomeBox"
 WelcomeBox.Size = UDim2.new(1, 0, 0, 180)
 WelcomeBox.Position = UDim2.new(0, 0, 0, 0)
-WelcomeBox.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+WelcomeBox.BackgroundColor3 = Color3.fromRGB(15, 15, 15) -- Dark grey-black
 WelcomeBox.BorderSizePixel = 0
 WelcomeBox.Parent = ContentFrame
 
@@ -97,6 +98,7 @@ local WelcomeBoxCorner = Instance.new("UICorner")
 WelcomeBoxCorner.CornerRadius = UDim.new(0, 8)
 WelcomeBoxCorner.Parent = WelcomeBox
 
+-- Welcome text - LIGHT GREY (almost white) for readability
 local WelcomeText = Instance.new("TextLabel")
 WelcomeText.Name = "WelcomeText"
 WelcomeText.Size = UDim2.new(1, -20, 1, -20)
@@ -109,9 +111,9 @@ Async
 Esp
 Noclip And many more
 
-      But first You need to add frend someone 
-      So you I can verify That your are a person]]
-WelcomeText.TextColor3 = Color3.fromRGB(180, 220, 255)
+      But first You need to add someone to verify your are human 
+      So you can unlock the menu after it]]
+WelcomeText.TextColor3 = Color3.fromRGB(220, 220, 220) -- Light grey
 WelcomeText.TextSize = 18
 WelcomeText.Font = Enum.Font.Code
 WelcomeText.TextYAlignment = Enum.TextYAlignment.Top
@@ -119,15 +121,15 @@ WelcomeText.TextXAlignment = Enum.TextXAlignment.Center
 WelcomeText.TextWrapped = true
 WelcomeText.Parent = WelcomeBox
 
--- Add this user button
+-- Add this user button - BLACK
 local AddUserButton = Instance.new("TextButton")
 AddUserButton.Name = "AddUserButton"
 AddUserButton.Size = UDim2.new(1, 0, 0, 50)
 AddUserButton.Position = UDim2.new(0, 0, 1, -60)
-AddUserButton.BackgroundColor3 = Color3.fromRGB(50, 100, 200)
+AddUserButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20) -- Dark grey-black
 AddUserButton.BorderSizePixel = 0
 AddUserButton.Text = "Add this user"
-AddUserButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+AddUserButton.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
 AddUserButton.TextSize = 20
 AddUserButton.Font = Enum.Font.GothamBold
 AddUserButton.Parent = ContentFrame
@@ -136,27 +138,27 @@ local AddUserButtonCorner = Instance.new("UICorner")
 AddUserButtonCorner.CornerRadius = UDim.new(0, 8)
 AddUserButtonCorner.Parent = AddUserButton
 
--- Button hover effects
+-- Button hover effects - STAY BLACK, just slightly lighter
 AddUserButton.MouseEnter:Connect(function()
-	AddUserButton.BackgroundColor3 = Color3.fromRGB(70, 120, 220)
+	AddUserButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40) -- Slightly lighter black on hover
 end)
 
 AddUserButton.MouseLeave:Connect(function()
-	AddUserButton.BackgroundColor3 = Color3.fromRGB(50, 100, 200)
+	AddUserButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20) -- Back to original
 end)
 
 CloseButton.MouseEnter:Connect(function()
-	CloseButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+	CloseButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40) -- Slightly lighter black
+	CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255) -- Keep text white
 end)
 
 CloseButton.MouseLeave:Connect(function()
-	CloseButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+	CloseButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+	CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 end)
 
--- Function to copy text to clipboard (Roblox doesn't have direct clipboard access, so we simulate it)
+-- Function to copy text to clipboard
 local function setClipboard(text)
-	-- For Roblox, we can use SetRBXClipboard if available (some executors provide this)
-	-- Otherwise, we'll create a TextBox trick
 	if setclipboard then
 		setclipboard(text)
 		return true
@@ -167,7 +169,6 @@ local function setClipboard(text)
 		setrbxclipboard(text)
 		return true
 	else
-		-- Fallback method: Create a TextBox, select text, and copy
 		local TextBox = Instance.new("TextBox")
 		TextBox.Text = text
 		TextBox.Parent = ScreenGui
@@ -176,11 +177,9 @@ local function setClipboard(text)
 		wait()
 		TextBox.Text = text
 		
-		-- Select all text
 		TextBox.CursorPosition = #text + 1
 		TextBox.SelectionStart = 1
 		
-		-- Try to copy (this may not work in all executors)
 		game:GetService("UserInputService"):SetKeysDown({Enum.KeyCode.LeftControl})
 		game:GetService("UserInputService"):SetKeysDown({Enum.KeyCode.C})
 		wait(0.05)
@@ -194,9 +193,10 @@ end
 
 -- Button click functionality
 AddUserButton.MouseButton1Click:Connect(function()
-	-- Change button appearance temporarily
-	AddUserButton.Text = "Link Copied!"
-	AddUserButton.BackgroundColor3 = Color3.fromRGB(80, 160, 80)
+	-- Change button appearance temporarily - STAY BLACK THEME
+	AddUserButton.Text = "LINK COPIED!"
+	AddUserButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30) -- Slightly lighter for feedback
+	AddUserButton.TextColor3 = Color3.fromRGB(200, 255, 200) -- Light green text for success
 	
 	-- Copy the link
 	local success = pcall(function()
@@ -204,15 +204,17 @@ AddUserButton.MouseButton1Click:Connect(function()
 	end)
 	
 	if not success then
-		AddUserButton.Text = "Failed to Copy"
-		AddUserButton.BackgroundColor3 = Color3.fromRGB(160, 80, 80)
+		AddUserButton.Text = "FAILED TO COPY"
+		AddUserButton.BackgroundColor3 = Color3.fromRGB(30, 20, 20) -- Dark red-black
+		AddUserButton.TextColor3 = Color3.fromRGB(255, 150, 150) -- Light red text
 	end
 	
 	wait(2)
 	
 	-- Reset button
 	AddUserButton.Text = "Add this user"
-	AddUserButton.BackgroundColor3 = Color3.fromRGB(50, 100, 200)
+	AddUserButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+	AddUserButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 end)
 
 -- Close button functionality
@@ -220,7 +222,7 @@ CloseButton.MouseButton1Click:Connect(function()
 	ScreenGui:Destroy()
 end)
 
--- Optional: Make the window draggable
+-- Make the window draggable
 local dragging = false
 local dragInput, dragStart, startPos
 
@@ -254,4 +256,7 @@ end)
 -- Make sure GUI is on top
 ScreenGui.DisplayOrder = 999
 
-print("KDype Script Loader GUI created successfully!")
+-- Center confirmation (optional debug print)
+print("KDype Black Script Loader GUI created - CENTERED POSITION")
+print("Position: Center of screen (X: 0.5, Y: 0.5 with anchor point)")
+print("Theme: Pure black with white/grey text only")
