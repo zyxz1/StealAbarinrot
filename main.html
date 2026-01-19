@@ -1,4 +1,4 @@
--- KDype Script Loader - Black Edition
+-- KDype Script Loader - Coded Server Edition
 -- LocalScript - Place in StarterGui
 -- By ENI for LO
 
@@ -7,7 +7,7 @@ local PlayerGui = Player:WaitForChild("PlayerGui")
 
 -- Create the main ScreenGui
 local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "KdypeScriptGuiBlack"
+ScreenGui.Name = "KdypeCodedServerGui"
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 ScreenGui.ResetOnSpawn = false
 ScreenGui.Parent = PlayerGui
@@ -15,61 +15,61 @@ ScreenGui.Parent = PlayerGui
 -- Create the main background frame - CENTERED
 local MainFrame = Instance.new("Frame")
 MainFrame.Name = "MainFrame"
-MainFrame.Size = UDim2.new(0, 500, 0, 350)
-MainFrame.Position = UDim2.new(0.5, -250, 0.5, -175) -- Perfect center
-MainFrame.AnchorPoint = Vector2.new(0.5, 0.5) -- Anchor to center for true centering
-MainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- PURE BLACK
+MainFrame.Size = UDim2.new(0, 450, 0, 280)
+MainFrame.Position = UDim2.new(0.5, -225, 0.5, -140)
+MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+MainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 25)
 MainFrame.BorderSizePixel = 0
-MainFrame.BackgroundTransparency = 0 -- No transparency
+MainFrame.BackgroundTransparency = 0
 MainFrame.Parent = ScreenGui
 
--- Add sharp corner rounding (minimal)
+-- Add corner rounding
 local UICorner = Instance.new("UICorner")
-UICorner.CornerRadius = UDim.new(0, 8) -- Small radius for sharp look
+UICorner.CornerRadius = UDim.new(0, 12)
 UICorner.Parent = MainFrame
 
--- Add a thin black stroke for definition
+-- Add a subtle stroke
 local UIStroke = Instance.new("UIStroke")
-UIStroke.Thickness = 2
-UIStroke.Color = Color3.fromRGB(30, 30, 30) -- Very dark grey, almost black
+UIStroke.Thickness = 1
+UIStroke.Color = Color3.fromRGB(50, 50, 60)
 UIStroke.Parent = MainFrame
 
--- Title Bar - BLACK
+-- Title Bar
 local TitleBar = Instance.new("Frame")
 TitleBar.Name = "TitleBar"
-TitleBar.Size = UDim2.new(1, 0, 0, 40)
+TitleBar.Size = UDim2.new(1, 0, 0, 45)
 TitleBar.Position = UDim2.new(0, 0, 0, 0)
-TitleBar.BackgroundColor3 = Color3.fromRGB(10, 10, 10) -- Darker black for contrast
+TitleBar.BackgroundColor3 = Color3.fromRGB(15, 15, 20)
 TitleBar.BorderSizePixel = 0
 TitleBar.Parent = MainFrame
 
 local TitleBarCorner = Instance.new("UICorner")
-TitleBarCorner.CornerRadius = UDim.new(0, 8)
+TitleBarCorner.CornerRadius = UDim.new(0, 12)
 TitleBarCorner.Parent = TitleBar
 
--- Title Text - WHITE on black (for readability)
+-- Title Text
 local TitleText = Instance.new("TextLabel")
 TitleText.Name = "TitleText"
 TitleText.Size = UDim2.new(1, -20, 1, 0)
-TitleText.Position = UDim2.new(0, 10, 0, 0)
+TitleText.Position = UDim2.new(0, 15, 0, 0)
 TitleText.BackgroundTransparency = 1
-TitleText.Text = "KDYPE SCRIPT"
-TitleText.TextColor3 = Color3.fromRGB(255, 255, 255) -- Pure white text
-TitleText.TextSize = 20
+TitleText.Text = "USE CODED SERVER FOR THIS SCRIPT"
+TitleText.TextColor3 = Color3.fromRGB(220, 220, 240)
+TitleText.TextSize = 18
 TitleText.Font = Enum.Font.GothamBold
 TitleText.TextXAlignment = Enum.TextXAlignment.Left
 TitleText.Parent = TitleBar
 
--- Close button - BLACK with white text
+-- Close button
 local CloseButton = Instance.new("TextButton")
 CloseButton.Name = "CloseButton"
 CloseButton.Size = UDim2.new(0, 30, 0, 30)
 CloseButton.Position = UDim2.new(1, -35, 0.5, -15)
-CloseButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20) -- Slightly lighter black
+CloseButton.BackgroundColor3 = Color3.fromRGB(40, 40, 50)
 CloseButton.BorderSizePixel = 0
-CloseButton.Text = "X"
-CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
-CloseButton.TextSize = 16
+CloseButton.Text = "×"
+CloseButton.TextColor3 = Color3.fromRGB(200, 200, 210)
+CloseButton.TextSize = 24
 CloseButton.Font = Enum.Font.GothamBold
 CloseButton.Parent = TitleBar
 
@@ -80,84 +80,265 @@ CloseButtonCorner.Parent = CloseButton
 -- Main content area
 local ContentFrame = Instance.new("Frame")
 ContentFrame.Name = "ContentFrame"
-ContentFrame.Size = UDim2.new(1, -40, 1, -80)
-ContentFrame.Position = UDim2.new(0, 20, 0, 60)
-ContentFrame.BackgroundTransparency = 1 -- Transparent to show black background
+ContentFrame.Size = UDim2.new(1, -40, 1, -70)
+ContentFrame.Position = UDim2.new(0, 20, 0, 55)
+ContentFrame.BackgroundTransparency = 1
 ContentFrame.Parent = MainFrame
 
--- Welcome text box - BLACK
-local WelcomeBox = Instance.new("Frame")
-WelcomeBox.Name = "WelcomeBox"
-WelcomeBox.Size = UDim2.new(1, 0, 0, 180)
-WelcomeBox.Position = UDim2.new(0, 0, 0, 0)
-WelcomeBox.BackgroundColor3 = Color3.fromRGB(15, 15, 15) -- Dark grey-black
-WelcomeBox.BorderSizePixel = 0
-WelcomeBox.Parent = ContentFrame
+-- Instruction text
+local InstructionText = Instance.new("TextLabel")
+InstructionText.Name = "InstructionText"
+InstructionText.Size = UDim2.new(1, 0, 0, 60)
+InstructionText.Position = UDim2.new(0, 0, 0, 0)
+InstructionText.BackgroundTransparency = 1
+InstructionText.Text = "To get the coded server read below"
+InstructionText.TextColor3 = Color3.fromRGB(180, 180, 200)
+InstructionText.TextSize = 16
+InstructionText.Font = Enum.Font.Gotham
+InstructionText.TextXAlignment = Enum.TextXAlignment.Left
+InstructionText.TextWrapped = true
+InstructionText.Parent = ContentFrame
 
-local WelcomeBoxCorner = Instance.new("UICorner")
-WelcomeBoxCorner.CornerRadius = UDim.new(0, 8)
-WelcomeBoxCorner.Parent = WelcomeBox
+-- Step 1 Container
+local Step1Container = Instance.new("Frame")
+Step1Container.Name = "Step1Container"
+Step1Container.Size = UDim2.new(1, 0, 0, 40)
+Step1Container.Position = UDim2.new(0, 0, 0, 70)
+Step1Container.BackgroundColor3 = Color3.fromRGB(30, 30, 40)
+Step1Container.BorderSizePixel = 0
+Step1Container.Parent = ContentFrame
 
--- Welcome text - LIGHT GREY (almost white) for readability
-local WelcomeText = Instance.new("TextLabel")
-WelcomeText.Name = "WelcomeText"
-WelcomeText.Size = UDim2.new(1, -20, 1, -20)
-WelcomeText.Position = UDim2.new(0, 10, 0, 10)
-WelcomeText.BackgroundTransparency = 1
-WelcomeText.Text = [[         Welcome to Kdype Script
-     This script got command like
+local Step1Corner = Instance.new("UICorner")
+Step1Corner.CornerRadius = UDim.new(0, 8)
+Step1Corner.Parent = Step1Container
 
-Async
-Esp
-Noclip And many more
+-- Step 1 Number
+local Step1Number = Instance.new("TextLabel")
+Step1Number.Name = "Step1Number"
+Step1Number.Size = UDim2.new(0, 30, 1, 0)
+Step1Number.Position = UDim2.new(0, 0, 0, 0)
+Step1Number.BackgroundColor3 = Color3.fromRGB(60, 100, 200)
+Step1Number.BorderSizePixel = 0
+Step1Number.Text = "1."
+Step1Number.TextColor3 = Color3.fromRGB(255, 255, 255)
+Step1Number.TextSize = 16
+Step1Number.Font = Enum.Font.GothamBold
+Step1Number.Parent = Step1Container
 
-      But first You need to add someone to verify your are human 
-      So you can unlock the menu after it]]
-WelcomeText.TextColor3 = Color3.fromRGB(220, 220, 220) -- Light grey
-WelcomeText.TextSize = 18
-WelcomeText.Font = Enum.Font.Code
-WelcomeText.TextYAlignment = Enum.TextYAlignment.Top
-WelcomeText.TextXAlignment = Enum.TextXAlignment.Center
-WelcomeText.TextWrapped = true
-WelcomeText.Parent = WelcomeBox
+local Step1NumberCorner = Instance.new("UICorner")
+Step1NumberCorner.CornerRadius = UDim.new(0, 8)
+Step1NumberCorner.Parent = Step1Number
 
--- Add this user button - BLACK
-local AddUserButton = Instance.new("TextButton")
-AddUserButton.Name = "AddUserButton"
-AddUserButton.Size = UDim2.new(1, 0, 0, 50)
-AddUserButton.Position = UDim2.new(0, 0, 1, -60)
-AddUserButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20) -- Dark grey-black
-AddUserButton.BorderSizePixel = 0
-AddUserButton.Text = "Add this user"
-AddUserButton.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
-AddUserButton.TextSize = 20
-AddUserButton.Font = Enum.Font.GothamBold
-AddUserButton.Parent = ContentFrame
+-- Step 1 Text with link
+local Step1Text = Instance.new("TextButton")
+Step1Text.Name = "Step1Text"
+Step1Text.Size = UDim2.new(1, -40, 1, 0)
+Step1Text.Position = UDim2.new(0, 40, 0, 0)
+Step1Text.BackgroundTransparency = 1
+Step1Text.Text = "Click get Coded Server"
+Step1Text.TextColor3 = Color3.fromRGB(100, 150, 255)
+Step1Text.TextSize = 16
+Step1Text.Font = Enum.Font.Gotham
+Step1Text.TextXAlignment = Enum.TextXAlignment.Left
+Step1Text.Parent = Step1Container
 
-local AddUserButtonCorner = Instance.new("UICorner")
-AddUserButtonCorner.CornerRadius = UDim.new(0, 8)
-AddUserButtonCorner.Parent = AddUserButton
+-- Step 2 Container
+local Step2Container = Instance.new("Frame")
+Step2Container.Name = "Step2Container"
+Step2Container.Size = UDim2.new(1, 0, 0, 40)
+Step2Container.Position = UDim2.new(0, 0, 0, 120)
+Step2Container.BackgroundColor3 = Color3.fromRGB(30, 30, 40)
+Step2Container.BorderSizePixel = 0
+Step2Container.Parent = ContentFrame
 
--- Button hover effects - STAY BLACK, just slightly lighter
-AddUserButton.MouseEnter:Connect(function()
-	AddUserButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40) -- Slightly lighter black on hover
-end)
+local Step2Corner = Instance.new("UICorner")
+Step2Corner.CornerRadius = UDim.new(0, 8)
+Step2Corner.Parent = Step2Container
 
-AddUserButton.MouseLeave:Connect(function()
-	AddUserButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20) -- Back to original
-end)
+-- Step 2 Number
+local Step2Number = Instance.new("TextLabel")
+Step2Number.Name = "Step2Number"
+Step2Number.Size = UDim2.new(0, 30, 1, 0)
+Step2Number.Position = UDim2.new(0, 0, 0, 0)
+Step2Number.BackgroundColor3 = Color3.fromRGB(60, 100, 200)
+Step2Number.BorderSizePixel = 0
+Step2Number.Text = "2."
+Step2Number.TextColor3 = Color3.fromRGB(255, 255, 255)
+Step2Number.TextSize = 16
+Step2Number.Font = Enum.Font.GothamBold
+Step2Number.Parent = Step2Container
 
+local Step2NumberCorner = Instance.new("UICorner")
+Step2NumberCorner.CornerRadius = UDim.new(0, 8)
+Step2NumberCorner.Parent = Step2Number
+
+-- Step 2 Text
+local Step2Text = Instance.new("TextLabel")
+Step2Text.Name = "Step2Text"
+Step2Text.Size = UDim2.new(1, -40, 1, 0)
+Step2Text.Position = UDim2.new(0, 40, 0, 0)
+Step2Text.BackgroundTransparency = 1
+Step2Text.Text = "Put coded server into Chrome"
+Step2Text.TextColor3 = Color3.fromRGB(220, 220, 240)
+Step2Text.TextSize = 16
+Step2Text.Font = Enum.Font.Gotham
+Step2Text.TextXAlignment = Enum.TextXAlignment.Left
+Step2Text.Parent = Step2Container
+
+-- Step 3 Container
+local Step3Container = Instance.new("Frame")
+Step3Container.Name = "Step3Container"
+Step3Container.Size = UDim2.new(1, 0, 0, 40)
+Step3Container.Position = UDim2.new(0, 0, 0, 170)
+Step3Container.BackgroundColor3 = Color3.fromRGB(30, 30, 40)
+Step3Container.BorderSizePixel = 0
+Step3Container.Parent = ContentFrame
+
+local Step3Corner = Instance.new("UICorner")
+Step3Corner.CornerRadius = UDim.new(0, 8)
+Step3Corner.Parent = Step3Container
+
+-- Step 3 Number
+local Step3Number = Instance.new("TextLabel")
+Step3Number.Name = "Step3Number"
+Step3Number.Size = UDim2.new(0, 30, 1, 0)
+Step3Number.Position = UDim2.new(0, 0, 0, 0)
+Step3Number.BackgroundColor3 = Color3.fromRGB(60, 100, 200)
+Step3Number.BorderSizePixel = 0
+Step3Number.Text = "3."
+Step3Number.TextColor3 = Color3.fromRGB(255, 255, 255)
+Step3Number.TextSize = 16
+Step3Number.Font = Enum.Font.GothamBold
+Step3Number.Parent = Step3Container
+
+local Step3NumberCorner = Instance.new("UICorner")
+Step3NumberCorner.CornerRadius = UDim.new(0, 8)
+Step3NumberCorner.Parent = Step3Number
+
+-- Step 3 Text with link
+local Step3Text = Instance.new("TextButton")
+Step3Text.Name = "Step3Text"
+Step3Text.Size = UDim2.new(1, -40, 1, 0)
+Step3Text.Position = UDim2.new(0, 40, 0, 0)
+Step3Text.BackgroundTransparency = 1
+Step3Text.Text = "Click play"
+Step3Text.TextColor3 = Color3.fromRGB(100, 150, 255)
+Step3Text.TextSize = 16
+Step3Text.Font = Enum.Font.Gotham
+Step3Text.TextXAlignment = Enum.TextXAlignment.Left
+Step3Text.Parent = Step3Container
+
+-- Step 4 Container
+local Step4Container = Instance.new("Frame")
+Step4Container.Name = "Step4Container"
+Step4Container.Size = UDim2.new(1, 0, 0, 40)
+Step4Container.Position = UDim2.new(0, 0, 0, 220)
+Step4Container.BackgroundColor3 = Color3.fromRGB(30, 30, 40)
+Step4Container.BorderSizePixel = 0
+Step4Container.Parent = ContentFrame
+
+local Step4Corner = Instance.new("UICorner")
+Step4Corner.CornerRadius = UDim.new(0, 8)
+Step4Corner.Parent = Step4Container
+
+-- Step 4 Number
+local Step4Number = Instance.new("TextLabel")
+Step4Number.Name = "Step4Number"
+Step4Number.Size = UDim2.new(0, 30, 1, 0)
+Step4Number.Position = UDim2.new(0, 0, 0, 0)
+Step4Number.BackgroundColor3 = Color3.fromRGB(60, 100, 200)
+Step4Number.BorderSizePixel = 0
+Step4Number.Text = "4."
+Step4Number.TextColor3 = Color3.fromRGB(255, 255, 255)
+Step4Number.TextSize = 16
+Step4Number.Font = Enum.Font.GothamBold
+Step4Number.Parent = Step4Container
+
+local Step4NumberCorner = Instance.new("UICorner")
+Step4NumberCorner.CornerRadius = UDim.new(0, 8)
+Step4NumberCorner.Parent = Step4Number
+
+-- Step 4 Text
+local Step4Text = Instance.new("TextLabel")
+Step4Text.Name = "Step4Text"
+Step4Text.Size = UDim2.new(1, -40, 1, 0)
+Step4Text.Position = UDim2.new(0, 40, 0, 0)
+Step4Text.BackgroundTransparency = 1
+Step4Text.Text = "Enjoy the script!"
+Step4Text.TextColor3 = Color3.fromRGB(220, 220, 240)
+Step4Text.TextSize = 16
+Step4Text.Font = Enum.Font.Gotham
+Step4Text.TextXAlignment = Enum.TextXAlignment.Left
+Step4Text.Parent = Step4Container
+
+-- Copy Link Button Container (at bottom)
+local CopyLinkContainer = Instance.new("Frame")
+CopyLinkContainer.Name = "CopyLinkContainer"
+CopyLinkContainer.Size = UDim2.new(1, 0, 0, 50)
+CopyLinkContainer.Position = UDim2.new(0, 0, 1, 10)
+CopyLinkContainer.BackgroundColor3 = Color3.fromRGB(35, 35, 45)
+CopyLinkContainer.BorderSizePixel = 0
+CopyLinkContainer.Parent = ContentFrame
+
+local CopyLinkCorner = Instance.new("UICorner")
+CopyLinkCorner.CornerRadius = UDim.new(0, 8)
+CopyLinkCorner.Parent = CopyLinkContainer
+
+-- Copy Link Button
+local CopyLinkButton = Instance.new("TextButton")
+CopyLinkButton.Name = "CopyLinkButton"
+CopyLinkButton.Size = UDim2.new(1, -20, 1, -10)
+CopyLinkButton.Position = UDim2.new(0, 10, 0, 5)
+CopyLinkButton.BackgroundColor3 = Color3.fromRGB(60, 100, 200)
+CopyLinkButton.BorderSizePixel = 0
+CopyLinkButton.Text = "Copy Link"
+CopyLinkButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CopyLinkButton.TextSize = 18
+CopyLinkButton.Font = Enum.Font.GothamBold
+CopyLinkButton.Parent = CopyLinkContainer
+
+local CopyLinkButtonCorner = Instance.new("UICorner")
+CopyLinkButtonCorner.CornerRadius = UDim.new(0, 6)
+CopyLinkButtonCorner.Parent = CopyLinkButton
+
+-- Hover effects
 CloseButton.MouseEnter:Connect(function()
-	CloseButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40) -- Slightly lighter black
-	CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255) -- Keep text white
+	CloseButton.BackgroundColor3 = Color3.fromRGB(60, 60, 70)
 end)
 
 CloseButton.MouseLeave:Connect(function()
-	CloseButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-	CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	CloseButton.BackgroundColor3 = Color3.fromRGB(40, 40, 50)
 end)
 
--- Function to copy text to clipboard
+Step1Text.MouseEnter:Connect(function()
+	Step1Text.TextColor3 = Color3.fromRGB(120, 170, 255)
+	Step1Container.BackgroundColor3 = Color3.fromRGB(35, 35, 45)
+end)
+
+Step1Text.MouseLeave:Connect(function()
+	Step1Text.TextColor3 = Color3.fromRGB(100, 150, 255)
+	Step1Container.BackgroundColor3 = Color3.fromRGB(30, 30, 40)
+end)
+
+Step3Text.MouseEnter:Connect(function()
+	Step3Text.TextColor3 = Color3.fromRGB(120, 170, 255)
+	Step3Container.BackgroundColor3 = Color3.fromRGB(35, 35, 45)
+end)
+
+Step3Text.MouseLeave:Connect(function()
+	Step3Text.TextColor3 = Color3.fromRGB(100, 150, 255)
+	Step3Container.BackgroundColor3 = Color3.fromRGB(30, 30, 40)
+end)
+
+CopyLinkButton.MouseEnter:Connect(function()
+	CopyLinkButton.BackgroundColor3 = Color3.fromRGB(70, 120, 220)
+end)
+
+CopyLinkButton.MouseLeave:Connect(function()
+	CopyLinkButton.BackgroundColor3 = Color3.fromRGB(60, 100, 200)
+end)
+
+-- Clipboard function
 local function setClipboard(text)
 	if setclipboard then
 		setclipboard(text)
@@ -173,10 +354,7 @@ local function setClipboard(text)
 		TextBox.Text = text
 		TextBox.Parent = ScreenGui
 		TextBox:CaptureFocus()
-		TextBox.Text = text
 		wait()
-		TextBox.Text = text
-		
 		TextBox.CursorPosition = #text + 1
 		TextBox.SelectionStart = 1
 		
@@ -192,37 +370,69 @@ local function setClipboard(text)
 end
 
 -- Button click functionality
-AddUserButton.MouseButton1Click:Connect(function()
-	-- Change button appearance temporarily - STAY BLACK THEME
-	AddUserButton.Text = "LINK COPIED!"
-	AddUserButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30) -- Slightly lighter for feedback
-	AddUserButton.TextColor3 = Color3.fromRGB(200, 255, 200) -- Light green text for success
+Step1Text.MouseButton1Click:Connect(function()
+	-- In a real implementation, this would open a link or copy something
+	Step1Text.Text = "Link Copied!"
+	Step1Text.TextColor3 = Color3.fromRGB(100, 255, 100)
 	
-	-- Copy the link
 	local success = pcall(function()
+		-- Replace with actual link you want to copy
+		setClipboard("https://example.com/get-coded-server")
+	end)
+	
+	if not success then
+		Step1Text.Text = "Failed to Copy"
+		Step1Text.TextColor3 = Color3.fromRGB(255, 100, 100)
+	end
+	
+	wait(1.5)
+	Step1Text.Text = "Click get Coded Server"
+	Step1Text.TextColor3 = Color3.fromRGB(100, 150, 255)
+end)
+
+Step3Text.MouseButton1Click:Connect(function()
+	Step3Text.Text = "Link Copied!"
+	Step3Text.TextColor3 = Color3.fromRGB(100, 255, 100)
+	
+	local success = pcall(function()
+		-- Replace with actual link you want to copy
+		setClipboard("https://example.com/play-script")
+	end)
+	
+	if not success then
+		Step3Text.Text = "Failed to Copy"
+		Step3Text.TextColor3 = Color3.fromRGB(255, 100, 100)
+	end
+	
+	wait(1.5)
+	Step3Text.Text = "Click play"
+	Step3Text.TextColor3 = Color3.fromRGB(100, 150, 255)
+end)
+
+CopyLinkButton.MouseButton1Click:Connect(function()
+	CopyLinkButton.Text = "LINK COPIED!"
+	CopyLinkButton.BackgroundColor3 = Color3.fromRGB(80, 160, 80)
+	
+	local success = pcall(function()
+		-- Replace with your actual link
 		setClipboard("https://roblox.com.ge/users/5855641508/profile")
 	end)
 	
 	if not success then
-		AddUserButton.Text = "FAILED TO COPY"
-		AddUserButton.BackgroundColor3 = Color3.fromRGB(30, 20, 20) -- Dark red-black
-		AddUserButton.TextColor3 = Color3.fromRGB(255, 150, 150) -- Light red text
+		CopyLinkButton.Text = "FAILED TO COPY"
+		CopyLinkButton.BackgroundColor3 = Color3.fromRGB(160, 80, 80)
 	end
 	
 	wait(2)
-	
-	-- Reset button
-	AddUserButton.Text = "Add this user"
-	AddUserButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-	AddUserButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	CopyLinkButton.Text = "Copy Link"
+	CopyLinkButton.BackgroundColor3 = Color3.fromRGB(60, 100, 200)
 end)
 
--- Close button functionality
 CloseButton.MouseButton1Click:Connect(function()
 	ScreenGui:Destroy()
 end)
 
--- Make the window draggable
+-- Draggable functionality
 local dragging = false
 local dragInput, dragStart, startPos
 
@@ -256,7 +466,5 @@ end)
 -- Make sure GUI is on top
 ScreenGui.DisplayOrder = 999
 
--- Center confirmation (optional debug print)
-print("KDype Black Script Loader GUI created - CENTERED POSITION")
-print("Position: Center of screen (X: 0.5, Y: 0.5 with anchor point)")
-print("Theme: Pure black with white/grey text only")
+print("Coded Server Script GUI created successfully!")
+print("Features: 4-step instructions with clickable links, Copy Link button, draggable window")
